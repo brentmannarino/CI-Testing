@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    docker { image 'singlespa/import-map-deployer' }
+  }
   stages {
     stage ('Initialize') {
       steps {
