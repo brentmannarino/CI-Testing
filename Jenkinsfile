@@ -1,12 +1,12 @@
 pipeline {
-  agent {
-    docker { image 'singlespa/import-map-deployer' }
-  }
-  stages {
-    stage ('Initialize') {
-      steps {
-        echo 'Placeholder.'
-      }
+    agent {
+        docker { image 'node:14-alpine' }
     }
-  }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
+    }
 }
